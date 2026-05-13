@@ -2,6 +2,12 @@
 
 A lightweight **desktop password manager built with Electron** that stores all data locally on your device with encryption. No cloud, no external servers — full privacy and control.
 
+## 📥 Download
+
+Get the latest version of the application here:
+
+👉 **[Download Latest Release](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases/latest)**
+
 ## 🛡️ Key Features
 - Fully **local storage** (no internet required)
 - **Encrypted password database**
@@ -12,12 +18,6 @@ A lightweight **desktop password manager built with Electron** that stores all d
 - Electron
 - Vite
 - TypeScript
-
-## 📥 Download
-
-Get the latest version of the application here:
-
-👉 **[Download Latest Release](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases/latest)**
 
 ## 🚀 Or if you want to run Locally by command source
 
