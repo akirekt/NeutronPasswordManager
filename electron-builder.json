@@ -30,7 +30,7 @@
       "rpm"
     ],
     "category": "Utility",
-    "icon": "public"
+    "icon": "public/icon.png"
   },
   "nsis": {
     "oneClick": false,

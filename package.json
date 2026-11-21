@@ -2,6 +2,12 @@
   "name": "password-menager",
   "private": true,
   "version": "1.0.0",
+  "author": {
+    "name": "Neutron",
+    "email": "contact@nneutron.com", 
+    "url": "https://nneutron.com"
+  },
+
   "type": "module",
   "scripts": {
     "dev": "vite",
