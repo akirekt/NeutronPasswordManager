@@ -65,12 +65,89 @@ For developers who want to audit the code or build it themselves:
    npm run build
    ```
    
-   The compiled application will be generated in the `release/` directory.
+   The compiled application will be generated in the `dist-release/` directory.
 
 5. **Preview the built app:**
    ```bash
    npm run preview
    ```
+
+### Create Installation Packages
+
+The JavaScript and Electron bundles must be compiled before packaging. The commands below use the checked-in `electron-builder.json` configuration and write packages to `dist-release/`.
+
+#### Windows `.exe` installer
+
+On Windows, run:
+
+```bash
+npm run build
+npx electron-builder --config electron-builder.json --win nsis --x64
+```
+
+The result is an NSIS `.exe` installer for 64-bit Windows under `dist-release/`.
+
+Windows packaging can also be cross-compiled from Linux when Wine and the required 32-bit compatibility libraries are installed. On Kubuntu/Debian, install Wine before running the commands:
+
+```bash
+sudo apt update
+sudo apt install wine64
+npx tsc
+npx vite build
+npx electron-builder --config electron-builder.json --win nsis --x64
+```
+
+#### Linux RPM package
+
+Build from a Linux host:
+
+```bash
+npx tsc
+npx vite build
+npx electron-builder --config electron-builder.json --linux rpm --x64
+```
+
+If `rpmbuild` is unavailable on Kubuntu/Debian, install the RPM tooling first:
+
+```bash
+sudo apt install rpm
+```
+
+The generated `.rpm` package will be in `dist-release/`.
+
+#### Linux DEB package
+
+```bash
+npx tsc
+npx vite build
+npx electron-builder --config electron-builder.json --linux deb --x64
+```
+
+The generated `.deb` package will be in `dist-release/`.
+
+#### Linux AppImage
+
+```bash
+npx tsc
+npx vite build
+npx electron-builder --config electron-builder.json --linux AppImage --x64
+```
+
+The generated `.AppImage` file will be in `dist-release/`. After downloading or moving it to another Linux machine, make it executable before launching:
+
+```bash
+chmod +x dist-release/*.AppImage
+```
+
+#### Build all configured Linux packages
+
+On Linux, `npm run build` compiles the app and builds the configured `AppImage`, `deb`, and `rpm` targets:
+
+```bash
+npm run build
+```
+
+> **Note:** Package formats should normally be built on their target operating system. Linux cross-packaging to Windows requires Wine; creating Linux installation packages from Windows is generally less reliable. Building for macOS requires a macOS host.
 
 ## 🔐 Security Architecture
 
