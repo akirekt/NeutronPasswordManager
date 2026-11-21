@@ -87,7 +87,7 @@ npx electron-builder --config electron-builder.json --win nsis --x64
 
 The result is an NSIS `.exe` installer for 64-bit Windows under `dist-release/`.
 
-Windows packaging can also be cross-compiled from Linux when Wine and the required 32-bit compatibility libraries are installed. On Kubuntu/Debian, install Wine before running the commands:
+Windows packaging can also be cross-compiled from Linux when Wine and the required 32-bit compatibility libraries are installed. On Ubuntu/Debian, install Wine before running the commands:
 
 ```bash
 sudo apt update
@@ -107,7 +107,7 @@ npx vite build
 npx electron-builder --config electron-builder.json --linux rpm --x64
 ```
 
-If `rpmbuild` is unavailable on Kubuntu/Debian, install the RPM tooling first:
+If `rpmbuild` is unavailable on Ubuntu/Debian, install the RPM tooling first:
 
 ```bash
 sudo apt install rpm
